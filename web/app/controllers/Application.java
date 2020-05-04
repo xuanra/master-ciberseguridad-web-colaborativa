@@ -57,8 +57,14 @@ public class Application extends Controller {
 
     public static void doSetMark(String student, Integer mark) {
         User u = User.loadUser(student);
-        u.setMark(mark);
-        u.save();
+
+        if (u != null) {
+            if (mark != null && mark >= 0 && mark <= 10) {
+                u.setMark(mark);
+                u.save();
+            }
+        }
+
         index();
     }
 }
