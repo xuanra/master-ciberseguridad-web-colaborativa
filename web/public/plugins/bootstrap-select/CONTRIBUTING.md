@@ -16,7 +16,7 @@ The issue tracker is the preferred channel for [bug reports](#bug-reports),
 respect the following restrictions:
 
 * Please **do not** use the issue tracker for personal support requests (use
-  [Stack Overflow](http://stackoverflow.com) or IRC).
+  [Stack Overflow](https://stackoverflow.com) or IRC).
 
 * Please **do not** derail or troll issues. Keep the discussion on topic and
   respect the opinions of others.
@@ -39,10 +39,9 @@ Guidelines for bug reports:
    jQuery version, Bootstrap version, and bootstrap-select version.
 
 4. **Create an isolated and reproducible test case.** Create a [reduced test
-   case](http://css-tricks.com/6263-reduced-test-cases/).
+   case](https://css-tricks.com/reduced-test-cases/).
 
-5. **Include a live example.** Make use of jsFiddle or jsBin to share your
-   isolated test cases.
+5. **Include a live example.** Use [this Plunker debugging template](https://developer.snapappointments.com/bootstrap-select/playground/) to share your isolated test cases. You can also make use of [jsFiddle](https://jsfiddle.net/) or [JS Bin](https://jsbin.com/).
 
 A good bug report shouldn't leave others needing to chase you up for more
 information. Please try to be as detailed as possible in your report. What is
@@ -90,8 +89,7 @@ code as deemed necessary.
   to the issue on the tracker, as a team member may be working on the issue in
   a branch or fork.
 * Non-trivial changes should be discussed in an issue first
-* If your change affects the distributed files, re-generate them using the
-  [grunt procedure](#using-grunt)
+* When modifying files, please do not edit the generated or minified files in the dist/ directory. Please edit the original files.
 * If possible, add relevant tests to cover the change
 * Write a convincing description of your PR and why we should land it
 
@@ -107,8 +105,16 @@ This means that you must setup a local development environment:
    - `grunt`: clean the distribution files and re-build them
    - `grunt dist`: build the distribution files
    - `grunt clean`: clean the distribution files
-   - `grunt dist-css`: build the css distribution files
-   - `grunt dist-js`: build the javascript distribution files
-   - `grunt watch`: watch for changes in the source files and build the
+   - `grunt build-css`: build the css distribution files
+   - `grunt build-js`: build the javascript distribution files
+   - `grunt dev-watch`: watch for changes in the source files and build the
      distribution files as needed
 
+## Running documentation locally
+
+1. If necessary, [install MkDocs](https://www.mkdocs.org/#installation).
+2. Install [mkdocs-bootstrap](https://mkdocs.github.io/mkdocs-bootstrap/) using `pip install mkdocs-bootstrap`.
+3. From the `/bootstrap-select/docs` directory, run `mkdocs serve` in the command line.
+4. Open `http://127.0.0.1:8000/` in your browser, and voilà.
+
+Learn more about using MkDocs by reading its [documentation](https://www.mkdocs.org/).
